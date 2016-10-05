@@ -1,19 +1,14 @@
 
 import java.io.PrintStream;
 
-public class test {
+public class Excersise1 {
 
 public static void main (String args[]){
-	PrintStream d = new PrintStream (System.out);
-	PrintStream s = new PrintStream (System.out);
 	
-	d.format ("%7", d);
-	s.format ("%7", s);
-
 	int speed;
 	int distance;
 
-	System.out.println ("%7Speed" + "    " + "%7Distance");
+	System.out.println ("Speed" + "    " + "Distance");
 	for (speed=10; speed<=40; speed +=10){
 		distance = (speed*speed) / 20 + speed;
 		System.out.println(speed + "    " + distance);
