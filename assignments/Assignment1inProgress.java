@@ -9,10 +9,10 @@ public class Assignment1 {
             
             for (angle = 15; angle <=75; angle+=15){
             double radians = Math.toRadians(angle);
-            System.out.println("Speed (m/s) = " + speed);
-            System.out.println("Angle (degrees) = " + angle);
+            System.out.printf("Speed (m/s) = " + speed + "\t");
+            System.out.printf("Angle (degrees) = " + angle + "\t");
             range = speed * speed * Math.sin(2 * radians) / 9.8;
-            System.out.println("Range (m) = " + range);
+            System.out.printf("Range (m) = " + range +"\n");
             }
     }
     System.out.println("");
