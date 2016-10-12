@@ -1,5 +1,5 @@
 public class Sector {
-	public static final int PI = 3.14159265359;
+	public static final double PI = 3.14159265359;
 
 	// constructor
 	public Sector (double radiusValue, double angleValue){
