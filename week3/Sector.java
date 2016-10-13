@@ -5,7 +5,6 @@ public class Sector {
 	public Sector (double radiusValue, double angleValue){
 		this.radiusValue = radiusValue;
 		this.angleValue = angleValue;
-
 	}
 
 	// method for area 
