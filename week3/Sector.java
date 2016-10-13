@@ -1,10 +1,10 @@
 public class Sector {
 	public static final double PI = 3.14159265359;
-	public double radiusValue; 
-	public double angleValue;
 	
 	// constructor
-	public Sector (radiusValue, angleValue){
+	public Sector (double radiusValue, double angleValue){
+		this.radiusValue = radiusValue;
+		this.angleValue = angleValue;
 
 	}
 
