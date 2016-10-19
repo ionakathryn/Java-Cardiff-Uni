@@ -22,5 +22,8 @@ public class Sector {
 	// method for perimeter
 	public double perimeterOfSector(){
 	}
+	
+	public double radius;
+	public double angle;
 
 }
