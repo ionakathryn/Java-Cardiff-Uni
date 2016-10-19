@@ -1,6 +1,6 @@
 import java.io.PrintStream;
 
-	public class Assignment1a 
+	public class Assignment1 
 	{
 	    public static void main(String[] args) 
 	    {
@@ -19,9 +19,9 @@ import java.io.PrintStream;
 	            for (angle = 15; angle <=75; angle+=15)
 	            {
 	            double radians = Math.toRadians(angle);
+	            range = speed * speed * Math.sin(2 * radians) / 9.8;
 	            output.format("   * %8d   *", speed);
 	            output.format(" %8d       *", angle);
-	            range = speed * speed * Math.sin(2 * radians) / 9.8;
 	            output.format(" %8.2f   * \t\n",range);
 	            }
 	        }
