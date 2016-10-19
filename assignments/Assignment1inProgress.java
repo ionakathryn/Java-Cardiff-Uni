@@ -1,6 +1,6 @@
 import java.io.PrintStream;
 
-public class Assignment1 
+public class Assignment1.1
 {
     public static void main(String[] args) 
     {
