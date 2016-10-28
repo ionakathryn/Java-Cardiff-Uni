@@ -1,8 +1,20 @@
 import java.applet.Applet;
 import java.awt.Graphics;
+import java.awt.Color;
 
-public class Line extends Applet {
+public class House extends Applet {
 	public void paint (Graphics g){
+	// skyscraper1
+	g.fillRect (280, 110, 50, 200);
+	g.setColor (Color.white);
+	g.fillRect (280, 120, 10, 10);
+	g.fillRect (300, 120, 10, 10);
+	g.fillRect (320, 120, 10, 10);
+	g.fillRect (280, 140, 10, 10);
+	g.fillRect (300, 140, 10, 10);
+	g.fillRect (320, 140, 10, 10);
+
+	// house outline
 	g.drawLine (120, 300, 300, 300);
 	g.drawLine (120,300,120,180);
 	g.drawLine (300,300, 300, 180);
@@ -18,10 +30,23 @@ public class Line extends Applet {
 	g.drawLine (220,200, 200, 200);
 	g.drawLine (220, 220, 220, 200);
 
-	g.drawRect (140,200, 40, 20);
-	g.drawRect (240,200, 40, 20);
-	g.drawRect (140,260, 40, 20);
-	g.drawRect (240,260, 40, 20);
+	// windows and door
+	g.setColor (Color.white);
+	g.fillRect (140,200, 40, 20);
+	g.fillRect (240,200, 40, 20);
+	g.fillRect (140,260, 40, 20);
+	g.fillRect (240,260, 40, 20);
+	g.setColor (Color.black);
 	g.drawRect (200,260, 20, 40);
+
+	// draw roof
+	g.drawLine (160,140, 120, 180);
+	g.drawLine (260, 140, 300,180);
+	g.drawLine (160, 140, 260, 140);
+
+	// skyscraper2
+	g.fillRect (60, 120, 80, 220);
+
+
 	}
 }
