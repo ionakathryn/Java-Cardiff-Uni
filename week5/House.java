@@ -47,14 +47,11 @@ public class House extends Applet {
 	g.drawLine (200,140,220,140);
 	g.drawLine (200,140, 200, 120);
 	g.drawLine (220,140, 220, 120);
-	g.drawLine (200, 220, 200,200);
-	g.drawLine (200, 200, 220, 200);
-	g.drawLine (200, 220, 220, 220);
-	g.drawLine (220,200, 200, 200);
-	g.drawLine (220, 220, 220, 200);
+	g.setColor (Color.red);
+	g.fillRect (120, 180, 180, 120);
 
 	// windows and door of house
-	g.setColor (Color.white);
+	g.setColor (Color.magenta);
 	g.fillRect (140,200, 40, 20);
 	g.fillRect (240,200, 40, 20);
 	g.fillRect (140,260, 40, 20);
@@ -62,6 +59,11 @@ public class House extends Applet {
 	g.setColor (Color.black);
 	g.drawRect (200,260, 20, 40);
 	g.fillRect (200,260, 20,40);
+    	g.drawLine (200, 220, 200,200);
+	g.drawLine (200, 200, 220, 200);
+	g.drawLine (200, 220, 220, 220);
+	g.drawLine (220,200, 200, 200);
+	g.drawLine (220, 220, 220, 200);
 
 	// draw roof
 	g.drawLine (160,140, 120, 180);
@@ -70,7 +72,15 @@ public class House extends Applet {
 
 	//sunshine
 	g.setColor (Color.orange);
-	g.fillOval (90, 90, 30, 30);
-	g.drawLine (90,90, 90,90);
+	g.fillOval (90, 90, 25, 25);
+	g.drawLine (100,80, 100,130);
+	g.drawLine (80, 100, 130, 100);
+
+	//background
+	setBackground (Color.cyan);
 
 	}
+
+
+	
+}
