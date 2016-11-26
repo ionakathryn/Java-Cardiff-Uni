@@ -30,7 +30,7 @@ public class Game {
 
 	if (args.length != 2){
 		System.out.println("Please enter two arguments");
-		System.exit(1);
+		System.exit(2);
 	}
 
 	boolean result = CheckInt(args[1]);
@@ -95,33 +95,30 @@ public class Game {
 		int count = 0;
 		int guess = Integer.parseInt(args[1]);
         BufferedReader userguess = new BufferedReader(new InputStreamReader(System.in));
-        do{
-        	
+
+        for (int a = 0; a < guess; a++)
+        {
         count++;
 		System.out.println ("Guess a character...");
 		
 		try
 		{
-		userguess.readLine();
 
 		//convert bufferedreader to chararray
 		String userline = userguess.readLine();
 		char[] userlinech = userline.toCharArray();
-		System.out.println(userlinech[0]);
+		char finalGuess = userlinech[0]);
+
+		//compare guess with chosenarr then update output
 
 		}
 		catch( IOException ioe)
 		{
-			System.exit(99);
+			System.exit(4);
 		}
 		System.out.println(userguess);
 	}
-	
-	while (count < guess);
-	
+		
 	}	
 }
 	
-
-
-			
