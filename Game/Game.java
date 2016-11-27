@@ -123,18 +123,28 @@ public class Game {
 	char[] userlinech = userline.toCharArray();
 	finalGuess = userlinech[0];
 
-	for (int b = 0; b < chosenarr.length; b++)
+	for (int k = 0; k < chosenarr.length; k++)
 	{
 		for (int c = 0; c < output.length; c++)
-		if (finalGuess == chosenarr[b])
+	{
+		if (finalGuess == chosenarr[k])
 		{
+			count++;
+			finalGuess = output[c];
 			System.out.println ("Good guess");
-			output[c] = chosenarr[b];
+
 		}
 	}
-		System.out.println (output);
+	
+	System.out.println (output);
 
+	if (count < 0){
+		System.out.print ("Hard luck");
 	}
+
+}
+	}
+
 
 
 		catch( IOException ioe)
