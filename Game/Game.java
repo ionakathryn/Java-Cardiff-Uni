@@ -18,7 +18,7 @@ public class Game {
 			if (secondarg.compareTo ("0") < 0 || secondarg.compareTo ("9") > 0)
 			{
 				valid = false;
-				System.out.println ("First arg must be integer");
+				System.out.println ("First argument must be integer");
 				System.exit(1);
 			}
 		}	
@@ -69,7 +69,7 @@ public class Game {
 				}
 
 				//end of file
-				if(inputLine==null)
+				if (inputLine == null)
 				{
 					done = true;
 				}
@@ -91,6 +91,9 @@ public class Game {
 	String chosen = words[num];
 	System.out.println (chosen);
 
+	//create comparison string
+	String comparison = null;
+
 	//convert string to char array
 	char[] chosenarr = chosen.toCharArray();
 	char[] output = new char[chosenarr.length];
@@ -104,7 +107,6 @@ public class Game {
 
 
 	//user guesses
-	//convert string to int
 	int count = 0;
 	int guessnum = Integer.parseInt(args[1]);
 	char finalGuess = 'a' ;
@@ -112,7 +114,7 @@ public class Game {
 
     for (int a = 0; a < guessnum; a++)
     {
-    count++;
+   
 	System.out.println ("Guess a character...");
 
 
@@ -120,23 +122,21 @@ public class Game {
 	{
 	//convert bufferedreader to chararray
 	String userline = userguess.readLine();
-	char[] userlinech = userline.toCharArray();
-	finalGuess = userlinech[0];
+	char[] userlinechar = userline.toCharArray();
+	finalGuess = userlinechar[0];
 
 	for (int k = 0; k < chosenarr.length; k++)
-	{
-		for (int c = 0; c < output.length; c++)
-	{
-		if (finalGuess == chosenarr[k])
+		for (int l = 0; l < output.length; l++)
 		{
-			count++;
-			finalGuess = output[c];
-			System.out.println ("Good guess");
+	if (finalGuess == chosenarr[k])
+	{
+		System.out.println ("Yes");
+		output[l] = finalGuess;
+		System.out.println (new String(output));
 
-		}
 	}
 	
-	System.out.println (output);
+	
 
 	if (count < 0){
 		System.out.print ("Hard luck");
@@ -153,4 +153,6 @@ public class Game {
 		}
 	}
 }
-		}
+
+
+}
