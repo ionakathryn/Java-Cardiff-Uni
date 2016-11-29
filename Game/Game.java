@@ -1,12 +1,11 @@
-	import java.io.BufferedReader;
-	import java.io.FileReader;
-	import java.io.FileNotFoundException;
-	import java.io.IOException;
-	import java.util.Random;
-	import java.io.BufferedReader;
-	import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Random;
+import java.io.InputStreamReader;
 	
-	public class Game {
+public class Game {
 	
 		// check if args[2] is an int
 		public static boolean CheckInt(String input)
