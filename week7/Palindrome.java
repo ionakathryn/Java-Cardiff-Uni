@@ -1,3 +1,13 @@
+/*
+ * Palindrome.java
+ * 
+ * V001
+ *
+ * 30.11.2016
+ * 
+ * Author: Iona-Kathryn Evans
+ */
+
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
