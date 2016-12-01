@@ -1,12 +1,12 @@
 /*
-	 * Game.java
-	 *
-	 * V001
-	 *
-	 * 30.11.2016
-	 *
-	 * Author: Iona-Kathryn Evans
-	 */
+* Game.java
+*
+* V001
+*
+* 30.11.2016
+*
+* Author: Iona-Kathryn Evans
+*/
 
 	import java.io.BufferedReader;
 	import java.io.FileReader;
