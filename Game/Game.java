@@ -7,13 +7,13 @@
 *
 * Author: Iona-Kathryn Evans
 */
-
 	import java.io.BufferedReader;
 	import java.io.FileReader;
 	import java.io.FileNotFoundException;
 	import java.io.IOException;
 	import java.util.Random;
 	import java.io.InputStreamReader;
+
 	public class Game {
 
 	 // check if args[2] is an int
@@ -90,15 +90,17 @@
 	  //user guesses
 	  int count = 0;
 	  int guessnum = Integer.parseInt(args[1]);
-	  char finalGuess = 'a';
+	   
 	  BufferedReader userguess = new BufferedReader(new InputStreamReader(System.in));
 	  String guess = null;
 	  char[] userlinechar = null;
 	  String userlinestring = null;
+	  String b = null;
+	  String c = null;
 
 	  for (int a = 0; a < guessnum; a++) {
-
-
+	   
+	   
 	   System.out.println("Guess a character..");
 
 	   try {
@@ -113,24 +115,40 @@
 	     System.out.println("Enter valid input");
 	     a--;
 	    }
-
+	    
 	    //compare user guess with chosen word
 	    for (int x = 0; x < chosenarr.length; x++) {
+	     
+	    
 	     for (int j = 0; j < output.length; j++) {
+	        c = new String(chosenarr);
+	        b = new String (output);
+	      
 	      if (Character.toLowerCase(userlinechar[0]) == Character.toLowerCase(chosenarr[x])) {
-	       output[x] = Character.toLowerCase(userlinechar[0]);
+	        output[x] = Character.toLowerCase(userlinechar[0]);
+	       
 	      }
+	      
 	     }
-	    }
+	    
+	     
+	      
+	     }
+	     
+	      if (b.equalsIgnoreCase(c)){
+        break;
+        }
 
 	   } catch (IOException ioe) {
 	    System.exit(4);
 	   }
 	  }
+	  
 	  System.out.println(new String(output));
 
 	  // check if user has won
 	  int countLose = 0;
+	  
 	  for (int i = 0; i < output.length; i++) {
 	   if (output[i] == '*') {
 	    countLose++;
