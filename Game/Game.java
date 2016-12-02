@@ -88,7 +88,6 @@ import java.io.InputStreamReader;
 	  System.out.println(new String(output));
 
 	  //user guesses
-	  int count = 0;
 	  int guessnum = Integer.parseInt(args[1]);
 	   
 	  BufferedReader userguess = new BufferedReader(new InputStreamReader(System.in));
