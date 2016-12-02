@@ -7,12 +7,12 @@
 *
 * Author: Iona-Kathryn Evans
 */
-	import java.io.BufferedReader;
-	import java.io.FileReader;
-	import java.io.FileNotFoundException;
-	import java.io.IOException;
-	import java.util.Random;
-	import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Random;
+import java.io.InputStreamReader;
 
 	public class Game {
 
