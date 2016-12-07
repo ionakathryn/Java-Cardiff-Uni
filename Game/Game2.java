@@ -3,7 +3,7 @@
 *
 * V002
 *
-* 03.12.2016
+* 07.12.2016
 *
 * Author: Iona-Kathryn Evans
 */
@@ -14,7 +14,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Random;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 	public class Game {
 
@@ -98,12 +97,14 @@ import java.util.Scanner;
 	  int guessnum = Integer.parseInt(args[1]);
 	   
 	  BufferedReader userguess = new BufferedReader(new InputStreamReader(System.in));
-	  String guess = "";
+	  String guess = " ";
+
 	
 	  char[] userlinechar = null;
 	  String userlinestring = null;
 	  String b = null;
 	  String c = null;
+
 
 	  for (int a = 0; a < guessnum; a++) {
 	   
@@ -114,29 +115,32 @@ import java.util.Scanner;
 
 	    //convert bufferedreader to chararray
 	    guess = userguess.readLine();
-	      if (guess.length() == 0)
-	  {
-	  	System.out.println("Enter valid input");
-	  	System.exit(5);
-	  }
-	  
-		userlinechar = guess.toCharArray();
-		char ascii = userlinechar[0];
-
-	    //check if user guess is valid
-	    if (ascii == '\n'){
-		System.out.println("Test");
-	     a--;	   
+	    userlinechar = guess.toCharArray();
+	    if (guess.length() == 0)
+	    {
+	    	System.out.println("Enter valid input");
+	    	System.exit(5);
 	    }
 
-	    if (!userlinestring.matches("[A-Za-z]+") || userlinechar.length != 1 || userlinestring.equals("")) {
+	    if (guess.length() != 1)
+	  	{
+	  	System.out.println("Enter valid input");
+	  	a--;
+	  	}
+
+	    userlinestring = Character.toString(userlinechar[0]);
+
+	    if (!userlinestring.matches("[A-Za-z]+") || userlinestring.matches(" ") || userlinestring.matches("")) 
+	    {
 	     System.out.println("Enter valid input");
 	     a--;
 	    } 
 	    
+	    
 	   
 	    //compare user guess with chosen word
 	    for (int x = 0; x < chosenarr.length; x++) {
+
 	     
 	    
 	     for (int j = 0; j < output.length; j++) {
