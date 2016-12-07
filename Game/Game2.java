@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.io.InputStreamReader;
 
-	public class Game {
+	public class GameM {
 
 	 // check if args[2] is an int
 	 public static boolean CheckInt(String input) {
@@ -56,8 +56,7 @@ import java.io.InputStreamReader;
 	 public static void main(String[] args) {
 	 BufferedReader reader = null;
 
-	 int check = args.length;
-	 boolean result1 = CheckArglength(check);
+	 boolean result1 = CheckArglength(args.length);
 
 	 boolean result2 = CheckInt(args[1]);
 
