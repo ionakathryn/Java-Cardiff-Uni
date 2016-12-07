@@ -27,12 +27,12 @@ public class Palindrome {
 		// test if string is valid
 			if (!userinput.matches("[A-Za-z]+")){
 				System.out.println ("Invalid Input");
-				System.exit(0);
+				System.exit(1);
 			}
 
 			else if (userinput.length() > 10){
 				System.out.println ("String too long");
-				System.exit(0);
+				System.exit(2);
 			}
 
 
