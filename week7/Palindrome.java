@@ -41,7 +41,7 @@ public class Palindrome {
 			stringReverse += String.valueOf(userinput.charAt(i));
 		}
 
-		if (userinput.equals(stringReverse)){
+		if (userinput.equalsIgnoreCase(stringReverse)){
 			System.out.println ("String is a Palindrome");
 			System.exit(0);
 		}
