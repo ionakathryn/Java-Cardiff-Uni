@@ -1,7 +1,7 @@
 /*
 * Game.java
 *
-* V002
+* V003
 *
 * 07.12.2016
 *
@@ -32,20 +32,34 @@ import java.io.InputStreamReader;
 	  return valid;
 	 }
 
+	 public static boolean CheckArglength(int argsLength){
+		boolean valid = true;
+    	if (argsLength != 2)
+    	{
+    		System.out.println("Please enter two arguments");
+    		valid = false;
+    		System.exit(2);
+    	}
+
+    	return valid;
+
+	}
+
+
 	public static int getRandomNumber(int lengthOfWords){
     	Random generator = new Random();
     	int num  = generator.nextInt(lengthOfWords-0) + 0;
    	return num;
 	}
 
-	 public static void main(String[] args) {
-	  BufferedReader reader = null;
-	  if (args.length != 2) {
-	   System.out.println("Please enter two arguments");
-	   System.exit(2);
-	  }
 
-	  boolean result = CheckInt(args[1]);
+	 public static void main(String[] args) {
+	 BufferedReader reader = null;
+
+	 int check = args.length;
+	 boolean result1 = CheckArglength(check);
+
+	 boolean result2 = CheckInt(args[1]);
 
 	  // try to open file
 	  try {
@@ -104,15 +118,17 @@ import java.io.InputStreamReader;
 	  String userlinestring = null;
 	  String b = null;
 	  String c = null;
+	  int counttry = 0;
+
 
 
 	  for (int a = 0; a < guessnum; a++) {
-	   
+	  
 	   
 	   System.out.println("Guess a character..");
 
 	   try {
-
+	   	
 	    //convert bufferedreader to chararray
 	    guess = userguess.readLine();
 	    userlinechar = guess.toCharArray();
@@ -122,19 +138,19 @@ import java.io.InputStreamReader;
 	    	System.exit(5);
 	    }
 
-	    if (guess.length() != 1)
-	  	{
-	  	System.out.println("Enter valid input");
-	  	a--;
-	  	}
-
+	  
 	    userlinestring = Character.toString(userlinechar[0]);
 
-	    if (!userlinestring.matches("[A-Za-z]+") || userlinestring.matches(" ") || userlinestring.matches("")) 
+	    if (!userlinestring.matches("[A-Za-z]+") || userlinestring.matches(" ") || guess.length() !=1) 
 	    {
-	     System.out.println("Enter valid input");
-	     a--;
+	    	a = counttry;
+	    	a--;
+	    	System.out.println("Enter valid input");
+	    	
 	    } 
+	    else {
+	    	counttry++;
+	    }
 	    
 	    
 	   
@@ -153,8 +169,6 @@ import java.io.InputStreamReader;
 	      }
 	      
 	     }
-	    
-	     
 	      
 	     }
 	     
@@ -163,7 +177,7 @@ import java.io.InputStreamReader;
         }
 
 	   } catch (IOException ioe) {
-	    System.exit(4);
+	    System.exit(6);
 	   }
 	  }
 	  
