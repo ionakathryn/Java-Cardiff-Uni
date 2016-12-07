@@ -14,6 +14,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Random;
 import java.io.InputStreamReader;
+import java.util.Scanner;
+
 	public class Game {
 
 	 // check if args[2] is an int
@@ -96,7 +98,8 @@ import java.io.InputStreamReader;
 	  int guessnum = Integer.parseInt(args[1]);
 	   
 	  BufferedReader userguess = new BufferedReader(new InputStreamReader(System.in));
-	  String guess = null;
+	  String guess = "";
+	
 	  char[] userlinechar = null;
 	  String userlinestring = null;
 	  String b = null;
@@ -111,19 +114,27 @@ import java.io.InputStreamReader;
 
 	    //convert bufferedreader to chararray
 	    guess = userguess.readLine();
-	    userlinechar = guess.toCharArray();
-	    userlinestring = Character.toString(userlinechar[0]);
-	    
+	      if (guess.length() == 0)
+	  {
+	  	System.out.println("Enter valid input");
+	  	System.exit(5);
+	  }
+	  
+		userlinechar = guess.toCharArray();
+		char ascii = userlinechar[0];
+
 	    //check if user guess is valid
-	    if (!userlinestring.matches("[A-Za-z]+") || userlinechar.length != 1) {
+	    if (ascii == '\n'){
+		System.out.println("Test");
+	     a--;	   
+	    }
+
+	    if (!userlinestring.matches("[A-Za-z]+") || userlinechar.length != 1 || userlinestring.equals("")) {
 	     System.out.println("Enter valid input");
 	     a--;
-	    }
+	    } 
 	    
 	   
-	    
-	    
-
 	    //compare user guess with chosen word
 	    for (int x = 0; x < chosenarr.length; x++) {
 	     
