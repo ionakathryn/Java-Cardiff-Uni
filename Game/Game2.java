@@ -1,7 +1,7 @@
 /*
-* Game.java
+* Game2.java
 *
-* V003
+* V004
 *
 * 07.12.2016
 *
@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.io.InputStreamReader;
 
-	public class GameM {
+	public class Game2 {
 
 	 // check if args[2] is an int
 	 public static boolean CheckInt(String input) {
@@ -152,6 +152,7 @@ import java.io.InputStreamReader;
 	    }
 	    
 	    
+	    
 	   
 	    //compare user guess with chosen word
 	    for (int x = 0; x < chosenarr.length; x++) {
@@ -174,6 +175,10 @@ import java.io.InputStreamReader;
 	      if (b.equalsIgnoreCase(c)){
         break;
         }
+        
+        //print current output 
+    		System.out.println(output);
+
 
 	   } catch (IOException ioe) {
 	    System.exit(6);
@@ -196,5 +201,5 @@ import java.io.InputStreamReader;
 	  } else {
 	   System.out.println("Well done");
 	  }
-	 }
-	}
+}
+}
