@@ -15,7 +15,6 @@ public class Letters
             System.exit(1);
         }
 
-        //open text file
         try
         {
             reader = new BufferedReader(new FileReader(args[0]));
@@ -77,6 +76,8 @@ public class Letters
             else
             {
                 char[] lineArray = inputLine.toCharArray();
+                
+                //compare values
                 for (int i = 0; i < inputLine.length(); i++)
                 {
                     if (lineArray[i] == 'A' || lineArray[i] == 'a')
@@ -221,8 +222,35 @@ public class Letters
         {
             System.out.println("Error closing file...");
         }
+        
+        System.out.print("Letter \t     Frequency\n");
 
-        System.out.println("A = " + countA);
-
+        System.out.println("   A  \t" + "\t " + countA);
+        System.out.println("   B  \t" + "\t " + countB);
+        System.out.println("   C  \t" + "\t " + countC);
+        System.out.println("   D  \t" + "\t " + countD);
+        System.out.println("   E  \t" + "\t " + countE);
+        System.out.println("   F  \t" + "\t " + countF);
+        System.out.println("   G  \t" + "\t " + countG);
+        System.out.println("   H  \t" + "\t " + countH);
+        System.out.println("   I  \t" + "\t " + countI);
+        System.out.println("   J  \t" + "\t " + countJ);
+        System.out.println("   K  \t" + "\t " + countK);
+        System.out.println("   L  \t" + "\t " + countL);
+        System.out.println("   M  \t" + "\t " + countM);
+        System.out.println("   N  \t" + "\t " + countN);
+        System.out.println("   O  \t" + "\t " + countO);
+        System.out.println("   P  \t" + "\t " + countP);
+        System.out.println("   Q  \t" + "\t " + countQ);
+        System.out.println("   R  \t" + "\t " + countR);
+        System.out.println("   S  \t" + "\t " + countS);
+        System.out.println("   T  \t" + "\t " + countT);
+        System.out.println("   U  \t" + "\t " + countU);
+        System.out.println("   V  \t" + "\t " + countV);
+        System.out.println("   W  \t" + "\t " + countW);
+        System.out.println("   X  \t" + "\t " + countX);
+        System.out.println("   Y  \t" + "\t " + countY);
+        System.out.println("   Z  \t" + "\t " + countZ);
+        
     }
 }
