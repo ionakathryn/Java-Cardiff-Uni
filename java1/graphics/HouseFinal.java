@@ -1,3 +1,14 @@
+/*
+ * HouseFinal.java
+ * 
+ * V001
+ *
+ * Oct 2016
+ * 
+ * Author: Iona-Kathryn Evans
+ */
+
+
 import java.applet.Applet;
 import java.awt.Graphics;
 import java.awt.Color;
