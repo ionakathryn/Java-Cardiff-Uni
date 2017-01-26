@@ -1,5 +1,5 @@
 /*
- * Palindrome.java
+ * Letters.java
  * 
  * V001
  *
