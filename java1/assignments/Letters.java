@@ -1,3 +1,13 @@
+/*
+ * Palindrome.java
+ * 
+ * V001
+ *
+ * Nov 2016
+ * 
+ * Author: Iona-Kathryn Evans
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
