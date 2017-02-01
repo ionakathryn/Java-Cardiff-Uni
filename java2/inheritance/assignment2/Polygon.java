@@ -1,4 +1,4 @@
-public class Polygon extends Isosceles
+public class Polygon extends Isoceles
 {
 	Polygon(double lengthValue, double sidesValue)
 	{
@@ -13,11 +13,12 @@ public class Polygon extends Isosceles
 		return polygonarea;
 	}
 
-	/*public polygonPerimeter()
+	public double polygonPerimeter()
 	{
-
+	    double perimeter = baseLength(360/sides) * sides;
+	    System.out.println(perimeter);
+	    return perimeter;
 	}
-	*/
 
 	private double sides;
 }
