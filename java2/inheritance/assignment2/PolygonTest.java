@@ -4,5 +4,6 @@ public class PolygonTest
 	{
 	Polygon polygontest = new Polygon(5,5);
 	polygontest.polygonArea();
+	polygontest.polygonPerimeter();
 	}
 }
