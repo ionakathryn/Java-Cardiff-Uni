@@ -1,7 +1,7 @@
-public class Isosceles
+public class Isoceles
 {
 	private double length;
-	public Isosceles(double lengthValue)
+	public Isoceles(double lengthValue)
 	{
 	length = lengthValue;
 	}
@@ -15,4 +15,5 @@ public class Isosceles
 	{
 		return 2 * length * Math.sin((angle/2) * 3.14159 / 180);
 	}
+	
 }
