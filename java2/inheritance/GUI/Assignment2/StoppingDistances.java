@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Panel;
+import java.io.PrintStream;
 
 public class StoppingDistances
     {
@@ -71,28 +72,37 @@ public class StoppingDistances
                 startSpeed.setText(" ");
                 incrementSpeed.setText(" ");
                 endSpeed.setText(" ");
+                area.setText(" ");
             }
             else if (e.getSource() == exit) {
                 System.exit(0);
             }
-            else if (e.getSource() == table){
-                start = Double.parseDouble(startSpeed.getText());
-                end = Double.parseDouble(endSpeed.getText());
-                increment = Double.parseDouble(incrementSpeed.getText());
-                for (double i = start; i < end; i =+ increment){
-                    area.setText("Speed = " + i + "\n");
+            else if (e.getSource() == table) {
+                public static boolean isInteger(String )
+                } else {
+
+                    {
+                        area.append("   ********************************************\n");
+                        area.append("   * Speed(mph) *  Distance(feet)  *\n");
+                        area.append("   ********************************************\n");
+
+                        start = Double.parseDouble(startSpeed.getText());
+                        end = Double.parseDouble(endSpeed.getText());
+                        increment = Double.parseDouble(incrementSpeed.getText());
+                        for (double currentSpeed = start; currentSpeed <= end; currentSpeed += increment) {
+                            stoppingDistance = (currentSpeed * currentSpeed) / 20 + currentSpeed;
+                            area.append(currentSpeed + "\t \t" + stoppingDistance + "\n");
+                        }
+
+
+                    }
                 }
-
-
-
-
             }
         }
         private TextField startSpeed,endSpeed,incrementSpeed;
         private Button clear,table,exit;
         private Panel panel1,panel2;
         private TextArea area;
-        private double start,end,increment, finalSpeed;
-        private int distance;
+        private double start,end,increment, stoppingDistance;
     }
 
