@@ -2,7 +2,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Panel;
-import java.io.PrintStream;
 
 public class StoppingDistances
     {
@@ -78,31 +77,78 @@ public class StoppingDistances
                 System.exit(0);
             }
             else if (e.getSource() == table) {
-                public static boolean isInteger(String )
-                } else {
 
+            	
+
+           		checkValidVals();
+           		checkNumeric(startSpeed.getText());
+           		checkNumeric(endSpeed.getText());
+           		checkNumeric(incrementSpeed.getText());
+           		checkNumericValue(startSpeed.getText(), endSpeed.getText());
+             
                     {
                         area.append("   ********************************************\n");
                         area.append("   * Speed(mph) *  Distance(feet)  *\n");
                         area.append("   ********************************************\n");
 
-                        start = Double.parseDouble(startSpeed.getText());
-                        end = Double.parseDouble(endSpeed.getText());
-                        increment = Double.parseDouble(incrementSpeed.getText());
-                        for (double currentSpeed = start; currentSpeed <= end; currentSpeed += increment) {
+                        start = Integer.parseInt(startSpeed.getText());
+                        end = Integer.parseInt(endSpeed.getText());
+                        increment = Integer.parseInt(incrementSpeed.getText());
+                        for (int currentSpeed = start; currentSpeed <= end; currentSpeed += increment) {
                             stoppingDistance = (currentSpeed * currentSpeed) / 20 + currentSpeed;
                             area.append(currentSpeed + "\t \t" + stoppingDistance + "\n");
                         }
 
 
-                    }
+                    
                 }
-            }
+                }
+            
         }
         private TextField startSpeed,endSpeed,incrementSpeed;
         private Button clear,table,exit;
         private Panel panel1,panel2;
         private TextArea area;
-        private double start,end,increment, stoppingDistance;
-    }
+        private int start,end,increment, stoppingDistance;
 
+        public void checkValidVals()
+            	{
+            		if (startSpeed.getText().equals("") || endSpeed.getText().equals("") || incrementSpeed.getText().equals(""))
+            	{
+            		area.append ("Enter valid values");
+            	}
+
+            	}
+
+        public boolean checkNumeric(String input)
+        {
+        	try
+        	{
+        		Integer.parseInt(input);
+        		return true;
+        	}
+        	catch (NumberFormatException nonNumeric)
+        	{
+        		area.append ("Enter numeric values");
+        		return false;
+        	}
+            
+        }
+
+        public boolean checkNumericValue(String input, String input2)
+        {
+        
+        int startval = Integer.parseInt(input);
+        int endval = Integer.parseInt(input2);
+
+        if (endval < startval)
+        {
+        	area.append ("End value must be larger than start value");
+        	return false;
+        }
+        else
+        {
+        	return true;
+        }
+    	}
+    }        
