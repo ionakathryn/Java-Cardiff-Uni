@@ -1,36 +1,33 @@
 public class Box extends Rectangle
 {
-
 	public Box (double lengthValue, double widthValue, double heightValue)
 	{
-		super(lengthValue, widthValue);
-		height = heightValue;
-		width = widthValue;
-		length = lengthValue;
+	super(lengthValue, widthValue);
+	height = heightValue;
+
 	}
-	
 	public double volume()
 	{
-		double volumeVal = length * width * height;
-		System.out.println("Volume: " + volumeVal);
-		return volumeVal;
+	double volumeVal = area() * height;
+	return volumeVal;
 	}
-	
-
 	public double surfaceArea()
 	{
-		double surface = 2 * area() + perimeter() * height;
-		System.out.println("Surface: " + surface);
-		return surface;
+	double surface = 2 * area() + perimeter() * height;
+	return surface;
 	}
-
 	public double bodyDiagonalLength()
 	{
-		double bodyDiagonalLengthVal = Math.sqrt(Math.pow(height, 2) + Math.pow(length, 2));
-		System.out.println("Body diagonal Length: " + bodyDiagonalLengthVal);
-		return bodyDiagonalLengthVal;
+	double bodyDiagonalLengthVal = Math.sqrt(Math.pow(height, 2) + Math.pow(diagonalLength(),2));
+	return bodyDiagonalLengthVal;
 	}
-	
 
-	public double height, length, width;
+	public double angle()
+	{
+	double angle = (Math.asin(height / bodyDiagonalLength()));
+	System.out.println (Math.toDegrees(angle));
+
+	}
+	private double height;
+
 }
