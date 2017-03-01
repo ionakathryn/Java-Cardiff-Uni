@@ -25,7 +25,7 @@ public class Box extends Rectangle
 	public double angle()
 	{
 	double angle = (Math.asin(height / bodyDiagonalLength()));
-	System.out.println (Math.toDegrees(angle));
+	return (Math.toDegrees(angle));
 
 	}
 	private double height;
