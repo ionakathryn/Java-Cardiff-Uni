@@ -1,7 +1,10 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Panel;
+
+import static java.awt.Color.green;
+import static java.awt.Color.yellow;
+
 public class StoppingDistances {
     public static void main(String[] args) {
         SpeedFrame frame = new SpeedFrame();
@@ -18,19 +21,32 @@ class SpeedFrame extends Frame implements ActionListener {
         // create two new panels
         panel1 = new Panel();
         panel1.setLayout(new GridLayout(5, 2));
-        panel1.add(new Label("Start"));
+
+        Label start = new Label("Start");
+        start.setBackground(yellow);
+        panel1.add(start);
+
         startSpeed = new TextField();
         panel1.add(startSpeed);
-        panel1.add(new Label("End"));
+
+        Label end = new Label("End");
+        end.setBackground(yellow);
+        panel1.add(end);
+
         endSpeed = new TextField();
         panel1.add(endSpeed);
-        panel1.add(new Label("Increment"));
+
+        Label increment = new Label("Increment");
+        increment.setBackground(yellow);
+        panel1.add(increment);
+
         incrementSpeed = new TextField();
         panel1.add(incrementSpeed);
         clear = new Button("Clear");
         panel1.add(clear);
         clear.addActionListener(this);
         table = new Button("Table");
+        table.setBackground(green);
         panel1.add(table);
         table.addActionListener(this);
         exit = new Button("Exit");
@@ -60,11 +76,16 @@ class SpeedFrame extends Frame implements ActionListener {
             checkNumeric(startSpeed.getText());
             checkNumeric(endSpeed.getText());
             checkNumeric(incrementSpeed.getText());
-            if (checkNumericValue(startSpeed.getText(), endSpeed.getText()) == true) {
+
+            if (checkNumericValue(startSpeed.getText(), endSpeed.getText()) == true &&
+                    checkNumeric(startSpeed.getText()) == true && checkNumeric(endSpeed.getText()) == true
+                    && checkNumeric(incrementSpeed.getText()) == true) {
                 {
-                    area.append(" ********************************************\n");
+                    area.append(" *********************************\n");
                     area.append(" * Speed(mph) * Distance(feet) *\n");
-                    area.append(" ********************************************\n");
+                    area.append(" *********************************\n");
+
+
 
 
                     start = Integer.parseInt(startSpeed.getText());
@@ -72,7 +93,9 @@ class SpeedFrame extends Frame implements ActionListener {
                     increment = Integer.parseInt(incrementSpeed.getText());
                     for (int currentSpeed = start; currentSpeed <= end; currentSpeed += increment) {
                         stoppingDistance = (currentSpeed * currentSpeed) / 20 + currentSpeed;
-                        area.append(currentSpeed + "\t \t" + stoppingDistance + "\n");
+                        area.append("*" + currentSpeed + "\t \t" + "*" + stoppingDistance + "\n");
+                        area.append(" *********************************\n");
+
                     }
                 }
             }
@@ -83,9 +106,10 @@ class SpeedFrame extends Frame implements ActionListener {
     private Panel panel1, panel2;
     private TextArea area;
     private int start, end, increment, stoppingDistance;
+
     public void checkValidVals() {
         if (startSpeed.getText().equals("") || endSpeed.getText().equals("") || incrementSpeed.getText().equals("")) {
-            area.append("Enter valid values");
+            area.append("Enter valid values\n");
         }
     }
     public boolean checkNumeric(String input) {
@@ -93,7 +117,7 @@ class SpeedFrame extends Frame implements ActionListener {
             int i = Integer.parseInt(input);
             return true;
         } catch (NumberFormatException nonNumeric) {
-            area.append("Enter numeric value");
+            area.append("Enter numeric value\n");
             return false;
         }
     }
@@ -101,7 +125,7 @@ class SpeedFrame extends Frame implements ActionListener {
         int startval = Integer.parseInt(input);
         int endval = Integer.parseInt(input2);
         if (endval < startval) {
-            area.append("End value must be larger than start value");
+            area.append("End value must be larger than start value\n");
             return false;
         } else {
             return true;
