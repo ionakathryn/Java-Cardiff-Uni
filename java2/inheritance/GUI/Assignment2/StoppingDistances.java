@@ -2,9 +2,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.awt.Color.green;
-import static java.awt.Color.yellow;
-
 public class StoppingDistances {
     public static void main(String[] args) {
         SpeedFrame frame = new SpeedFrame();
@@ -18,38 +15,43 @@ class SpeedFrame extends Frame implements ActionListener {
         final int DEFAULT_FRAME_WIDTH = 450;
         final int DEFAULT_FRAME_HEIGHT = 250;
         setSize(DEFAULT_FRAME_WIDTH, DEFAULT_FRAME_HEIGHT);
+
         // create two new panels
         panel1 = new Panel();
         panel1.setLayout(new GridLayout(5, 2));
 
-        Label start = new Label("Start");
-        start.setBackground(yellow);
+        Label start = new Label("Start",Label.CENTER);
+        start.setBackground(new Color(255, 255, 153));
         panel1.add(start);
 
         startSpeed = new TextField();
         panel1.add(startSpeed);
 
-        Label end = new Label("End");
-        end.setBackground(yellow);
+        Label end = new Label("End",Label.CENTER);
+        end.setBackground(new Color(255, 255, 153));
         panel1.add(end);
 
         endSpeed = new TextField();
         panel1.add(endSpeed);
 
-        Label increment = new Label("Increment");
-        increment.setBackground(yellow);
+        Label increment = new Label("Increment",Label.CENTER);
+        increment.setBackground(new Color(255, 255, 153));
         panel1.add(increment);
 
         incrementSpeed = new TextField();
         panel1.add(incrementSpeed);
         clear = new Button("Clear");
+        clear.setBackground(new Color(0, 153, 0));
         panel1.add(clear);
         clear.addActionListener(this);
+
         table = new Button("Table");
-        table.setBackground(green);
+        table.setBackground(new Color(0, 153, 0));
         panel1.add(table);
         table.addActionListener(this);
+
         exit = new Button("Exit");
+        exit.setBackground(new Color(0, 153, 0));
         panel1.add(exit);
         exit.addActionListener(this);
         panel2 = new Panel();
