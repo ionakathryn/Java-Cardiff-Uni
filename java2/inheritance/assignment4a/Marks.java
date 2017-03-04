@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 
 public class Marks {
@@ -11,13 +8,15 @@ public class Marks {
         BufferedReader in = null;
         String output = "";
         String[] arr = new String[60];
-        String[] components = new String[60];
+        String[] arrSplit = new String[60];
+        String[] sorted = new String[60];
         int i = 0;
+
 
         try {
             in = new BufferedReader(new FileReader("Marks.txt"));
         } catch (FileNotFoundException e) {
-            System.out.println("File Not Found");
+            System.out.println("File Not Found!!");
             System.exit(0);
         }
 
@@ -32,18 +31,33 @@ public class Marks {
                 System.exit(1);
             }
         }
+        
 
         for (int j = 0; j < arr.length; j++) {
             if (arr[j] != null) {
                 for (int k = 0; k < arr.length; k++) {
-                        components[k] = (Arrays.toString(arr[j].split(" ")));
-                    }
-
+                    arrSplit[j] = (Arrays.toString(arr[j].split(" ")));
                 }
 
             }
-        System.out.println(components[])
 
+        }
+        
+        for (int x = 0; x < arrSplit.length; x++){
+            if (arrSplit[x] != null){
+                System.out.println(arrSplit[x]);
+            }
+        }
+        
+        
+        Arrays.sort(arrSplit);
+        
+        for (int c = 0; c < arrSplit.length; c++){
+            if (arrSplit[c] !=null){
+                for (int d= 0; d < arrSplit.length; d++)
+                    sorted[c] = (arrSplit[c]);
+            }
+        }
+        
     }
-
-
+}
