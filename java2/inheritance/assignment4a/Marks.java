@@ -17,7 +17,7 @@ public class Marks {
         try {
             in = new BufferedReader(new FileReader("Marks.txt"));
         } catch (FileNotFoundException e) {
-            System.out.println("File Not Found!");
+            System.out.println("File Not Found!!");
             System.exit(0);
         }
 
@@ -42,6 +42,13 @@ public class Marks {
 
             }
 
+        }
+        
+        
+        for (int x = 0; x < arrSplit.length; x++){
+            if (arrSplit[x] != null){
+                System.out.println(arrSplit[x]);
+            }
         }
         
         for (int a = 0; a < arrSplit.length; a++){
