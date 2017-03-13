@@ -41,7 +41,15 @@ public class Marks {
         System.out.println("I/O error");
         System.exit(1);
       }
-      
+
+      for (int x = 0; x < marks.length; x++){
+        if (marks[x][0]!=null){
+        System.out.println(Arrays.toString(marks[x]));
+      }
+    }
+
+    Arrays.sort(marks);
+      /*
       System.out.print (marks[0][0] + " ");
       System.out.print (marks[0][1] + " ");
       System.out.print (marks[0][2] + "\n");
@@ -60,7 +68,7 @@ public class Marks {
       System.out.print (marks[5][0] + " ");
       System.out.print (marks[5][1] + " ");
       System.out.print (marks[5][2] + "\n");
-
+      */
 
       
 
