@@ -8,9 +8,10 @@ public class Marks {
     // method for opening file
     BufferedReader in = null;
     String line = "";
-    String[][] marks = new String[100][3];
-    int nrows = 0;
-    int ncols = 0;
+    String[] firstName = new String[60];
+    String[] surName = new String[60];
+    String[] marks = new String [60];
+    int i = 0;
 
     try { 
       in = new BufferedReader(new FileReader("Marks.txt"));
@@ -24,13 +25,15 @@ public class Marks {
         StringTokenizer stk = new StringTokenizer(line);
         line = in.readLine();
         while (stk.hasMoreTokens()){
-        marks[nrows][0] = stk.nextToken();
-        marks[nrows][1] = stk.nextToken();
-        marks[nrows][2] = stk.nextToken();
-        nrows++;
-        
-      }
-    }
+        		firstName[i] = stk.nextToken();
+        		surName[i] = stk.nextToken();
+        		marks[i] = stk.nextToken();
+        		i++;
+        	}
+	    }
+		        
+		    
+
       
         
       
@@ -41,45 +44,34 @@ public class Marks {
         System.out.println("I/O error");
         System.exit(1);
       }
+	        }
 
-      for (int x = 0; x < marks.length; x++){
-        if (marks[x][0]!=null){
-        System.out.println(Arrays.toString(marks[x]));
-      }
-    }
 
-    Arrays.sort(marks);
-      /*
-      System.out.print (marks[0][0] + " ");
-      System.out.print (marks[0][1] + " ");
-      System.out.print (marks[0][2] + "\n");
-      System.out.print (marks[1][0] + " ");
-      System.out.print (marks[1][1] + " ");
-      System.out.print (marks[1][2] + "\n");
-      System.out.print (marks[2][0] + " ");
-      System.out.print (marks[2][1] + " ");
-      System.out.print (marks[2][2] + "\n");
-      System.out.print (marks[3][0] + " ");
-      System.out.print (marks[3][1] + " ");
-      System.out.print (marks[3][2] + "\n");
-      System.out.print (marks[4][0] + " ");
-      System.out.print (marks[4][1] + " ");
-      System.out.print (marks[4][2] + "\n");
-      System.out.print (marks[5][0] + " ");
-      System.out.print (marks[5][1] + " ");
-      System.out.print (marks[5][2] + "\n");
-      */
+     // bubble sort surName array
 
-      
-
-      // traverse 3 elements, add to arr 0,1,2
-      // traverse next3 elements, add to arr 1,1,2
-      // traverse next3 elements, add to arr 2,1,2
-
-      // create method to sort through all arrays and display
 
     
-
-    }
-  }
+  
 }
+	public static void BubbleSort(String[] arr){
+			char[] charArr = arr.toCharArray();
+  			int a;
+  			boolean swap = true;
+  			String temp;
+
+  			while (swap){
+  				swap = false;
+  				for (a = 0; a < arr.length-1; a++){
+  					if (charArr[a].compareTo([charArr[a+1])){
+  						temp = charArr[a];
+  						charArr[a] = charArr[a+1];
+  						charArr[a+1] = temp;
+  						swap = true;
+  					}
+  				}
+  			}
+  		}
+
+}
+
+  	
