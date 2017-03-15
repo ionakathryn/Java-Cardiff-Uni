@@ -25,14 +25,14 @@ public class Marks {
         StringTokenizer stk = new StringTokenizer(line);
         line = in.readLine();
         while (stk.hasMoreTokens()){
-        		firstName[i] = stk.nextToken();
-        		surName[i] = stk.nextToken();
-        		marks[i] = stk.nextToken();
-        		i++;
-        	}
-	    }
-		        
-		    
+            firstName[i] = stk.nextToken();
+            surName[i] = stk.nextToken();
+            marks[i] = stk.nextToken();
+            i++;
+          }
+      }
+            
+        
 
       
         
@@ -44,7 +44,7 @@ public class Marks {
         System.out.println("I/O error");
         System.exit(1);
       }
-	        }
+          }
 
 
      // bubble sort surName array
@@ -53,25 +53,22 @@ public class Marks {
     
   
 }
-	public static void BubbleSort(String[] arr){
-			char[] charArr = arr.toCharArray();
-  			int a;
-  			boolean swap = true;
-  			String temp;
+  public static void BubbleSort(String[] arr){
+        int a;
+        boolean swap = true;
+        String temp;
 
-  			while (swap){
-  				swap = false;
-  				for (a = 0; a < arr.length-1; a++){
-  					if (charArr[a].compareTo([charArr[a+1])){
-  						temp = charArr[a];
-  						charArr[a] = charArr[a+1];
-  						charArr[a+1] = temp;
-  						swap = true;
-  					}
-  				}
-  			}
-  		}
+        while (swap){
+          swap = false;
+          for (a = 0; a < arr.length-1; a++){
+            if ((int)arr[a].compareTo((int)arr[a+1])){
+              temp = arr[a];
+              arr[a] = arr[a+1];
+              arr[a+1] = temp;
+              swap = true;
+            }
+          }
+        }
+      }
 
 }
-
-  	
