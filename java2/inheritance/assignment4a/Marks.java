@@ -8,10 +8,9 @@ public class Marks {
     // method for opening file
     BufferedReader in = null;
     String line = "";
-    String[] firstName = new String[60];
-    String[] surName = new String[60];
+    String[] name = new String[60];
     String[] marks = new String [60];
-    int i = 0;
+    int count = 0;
 
     try { 
       in = new BufferedReader(new FileReader("Marks.txt"));
@@ -25,50 +24,43 @@ public class Marks {
         StringTokenizer stk = new StringTokenizer(line);
         line = in.readLine();
         while (stk.hasMoreTokens()){
-            firstName[i] = stk.nextToken();
-            surName[i] = stk.nextToken();
-            marks[i] = stk.nextToken();
-            i++;
+            name[count] = stk.nextToken() + " " + stk.nextToken();
+            marks[count] = stk.nextToken();
+            count ++;
           }
       }
             
-        
-
-      
-        
-      
-      
-
-      
        catch (IOException ioe) {
         System.out.println("I/O error");
         System.exit(1);
       }
           }
 
+      String temp = "";
+      String print;
+      print = String.format("%-7s %9s", "Name", "Marks");
+      System.out.println(print);
+          for (int i = 0; i < name.length-1; i++){
+            for (int j = 0; j < name.length-1; j++){
+              if ((name[j]!=null) && (name[j+1]!=null)){
+              if (name[j].compareTo(name[j+1]) > 0){
+                temp = name[j];
+                name[j] = name[j+1];
+                name[j+1] = temp;
 
-     // bubble sort surName array
+              }
+            }
+            }
+          }
 
-
+          for (int a = 0; a < name.length; a++){
+            if(marks[a]!=null){
+            print = String.format("%-7s", name[a]);
+            System.out.println(print);
+          }
+        }
     
   
 }
-  public static void BubbleSort(String[] arr){
-        int a;
-        boolean swap = true;
-        String temp;
-
-        while (swap){
-          swap = false;
-          for (a = 0; a < arr.length-1; a++){
-            if ((int)arr[a].compareTo((int)arr[a+1])){
-              temp = arr[a];
-              arr[a] = arr[a+1];
-              arr[a+1] = temp;
-              swap = true;
-            }
-          }
-        }
-      }
 
 }
