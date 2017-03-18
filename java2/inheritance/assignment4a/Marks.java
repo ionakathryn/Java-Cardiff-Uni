@@ -9,7 +9,7 @@ public class Marks {
     BufferedReader in = null;
     String line = "";
     String[] name = new String[60];
-    String[] marks = new String [60];
+    String[] marks = new String[60];
     int count = 0;
 
     try { 
@@ -42,25 +42,23 @@ public class Marks {
       System.out.println(print);
           for (int i = 0; i < name.length-1; i++){
             for (int j = 0; j < name.length-1; j++){
-              if ((name[j]!=null) && (name[j+1]!=null)){
-              if (name[j].compareTo(name[j+1]) > 0){
-                temp = name[j];
-                name[j] = name[j+1];
-                name[j+1] = temp;
-
+              if ((name[i]!=null) && (name[i+1]!=null)){
+              if (name[i].compareTo(name[i+1]) < 0){
+                temp = name[i];
+                name[i] = name[i+1];
+                name[i+1] = temp;
+}
               }
             }
-            }
+            
           }
-
           for (int a = 0; a < name.length; a++){
-            if(marks[a]!=null){
+            if (name[a]!= null){
             print = String.format("%-7s", name[a]);
             System.out.println(print);
           }
         }
-    
+        
+    }
   
-}
-
 }
