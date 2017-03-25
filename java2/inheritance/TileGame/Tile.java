@@ -30,8 +30,8 @@ class TileFrame extends JFrame implements WindowListener{
         panel2.setLayout(new GridLayout(4,2));
 
         for (int i = 0; i < 16; i++){
-            buttons[i] = new Button("hello");
-            panel1.add(buttons[i]);
+            buttons[i] = new Button("" + i);
+            panel2.add(buttons[i]);
         }
         panel2.add(shuffleButton);
         add(panel1);
