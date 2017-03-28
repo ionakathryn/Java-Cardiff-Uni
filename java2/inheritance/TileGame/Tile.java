@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JButton;
+
 
 public class Tile {
     public static void main (String[] args) {
@@ -20,22 +22,24 @@ class TileFrame extends JFrame implements WindowListener{
         final int DEFAULT_FRAME_WIDTH = 500;
         final int DEFAULT_FRAME_HEIGHT = 500;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(4,4));
 
         setSize(DEFAULT_FRAME_WIDTH,DEFAULT_FRAME_HEIGHT);
-        Button buttons[] = new Button[16];
-        Button shuffleButton = new Button("Shuffle");
-        panel1 = new Panel();
-        panel1.setLayout(new GridLayout(4,0));
-        panel2 = new Panel();
-        panel2.setLayout(new GridLayout(4,2));
+        JButton buttons[] = new JButton[16];
+        JButton shuffleButton = new JButton("Shuffle");
+        panel1 = new Panel(new GridLayout(4,4));
+        frame.setTitle("Tile Game");       
+        
 
         for (int i = 0; i < 16; i++){
-            buttons[i] = new Button("" + i);
-            panel2.add(buttons[i]);
+            buttons[i] = new JButton();
+            buttons[i].setLabel(Integer.toString(i+1));
+            panel1.add(buttons[i]);
+           
         }
-        panel2.add(shuffleButton);
+        panel1.add(shuffleButton);
         add(panel1);
-        add(panel2);
+        
 
     }
 
