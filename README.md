@@ -1,3 +1,5 @@
+This repo is a collection of the work, mostly assignments that I have completed as part of Cardiff Universitys part time course in Java Programming. ALthough this course is part time, it has the same content that Computer Science MSc students take. 
+
 JAVA1 [COMPLETE]
 
 This course is an introduction to the concepts of JAVA programming. Topics covered include an introduction to classes and objects, arithmetic operators, use of methods of the Math class, comparison operators and use of if statement, use of while, do and for loops, creation of applets, keyboard input and exception handling, use of methods of the String and Character classes, text file input, pattern matching, accessor and mutator methods, static variables and static methods and, finally, arrays.  Each meeting comprises of a lecture followed by a laboratory session.  Assessed work will include the writing of Java programs.
