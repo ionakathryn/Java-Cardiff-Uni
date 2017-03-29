@@ -1,4 +1,4 @@
-This repo is a collection of the work, mostly assignments that I have completed as part of Cardiff Universitys part time course in Java Programming. ALthough this course is part time, it has the same content that Computer Science MSc students take. 
+This repo is a collection of the work, mostly assignments that I have completed as part of Cardiff Universitys part time course in Java Programming. Although this course is part time, it has the same content that the full time Computer Science MSc students take. 
 
 JAVA1 [COMPLETE]
 
