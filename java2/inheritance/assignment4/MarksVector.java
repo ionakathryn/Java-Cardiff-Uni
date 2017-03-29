@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-public class MarksVector {
+public class Results {
  public static void main(String[] args) {
 
   // method for opening file
@@ -65,7 +65,7 @@ public class MarksVector {
   }
 
   String print;
-  print = String.format("%-10s  %10s", "Name", "Marks");
+  print = String.format("%-10s    %10s", "Name", "Marks");
   System.out.println(print);
 
 
