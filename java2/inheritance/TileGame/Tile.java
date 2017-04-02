@@ -1,8 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import javax.swing.JButton;
+import java.awt.event.*;
+import java.awt.AWTEvent;
 
 
 public class Tile {
@@ -14,7 +14,8 @@ public class Tile {
     }
 }
 
-class TileFrame extends JFrame implements WindowListener{
+class TileFrame extends JFrame implements WindowListener,ActionListener{
+
 
     public TileFrame(){
         JFrame frame = new JFrame ("TileGame");
@@ -25,25 +26,53 @@ class TileFrame extends JFrame implements WindowListener{
         setLayout(new GridLayout(4,4));
 
         setSize(DEFAULT_FRAME_WIDTH,DEFAULT_FRAME_HEIGHT);
-        JButton buttons[] = new JButton[16];
         JButton shuffleButton = new JButton("Shuffle");
         panel1 = new Panel(new GridLayout(4,4));
+        panel2 = new Panel(new GridLayout(1,2));
         frame.setTitle("Tile Game");       
         
 
         for (int i = 0; i < 16; i++){
             buttons[i] = new JButton();
-            buttons[i].setLabel(Integer.toString(i+1));
+            buttons[i].addActionListener(this);
+            buttons[i].setText(Integer.toString(i+1));
             panel1.add(buttons[i]);
            
         }
-        panel1.add(shuffleButton);
+        blank = new JButton(" ");
+        panel1.add(blank);
+        panel2.add(shuffleButton);
         add(panel1);
-        
-
+        add(panel2);
     }
 
+
+
     private Panel panel1,panel2;
+    private JButton buttons[] = new JButton[16],blank;
+
+    public void actionPerformed(ActionEvent event)
+    {
+       if (event.getSource() != "blank"){
+        System.out.println("Error: move not valid");
+        System.exit(1);
+       }
+       if (event.getSource() == blank){
+        
+       }      
+    }
+
+    public void MouseClicked (MouseEvent e){
+        final int index = MouseEvent.getPoint();
+    }
+
+    public void mouseExited(MouseEvent e){};
+    public void mouseEntered(MouseEvent e){};
+    public void mousePressed(MouseEvent e){};
+    public void mouseReleased(MouseEvent e){};
+
+
+
 
     @Override
     public void windowOpened(WindowEvent e) {
@@ -79,4 +108,6 @@ class TileFrame extends JFrame implements WindowListener{
     public void windowDeactivated(WindowEvent e) {
 
     }
+
+
 }
