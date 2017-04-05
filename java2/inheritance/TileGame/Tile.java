@@ -14,21 +14,23 @@ public class Tile {
     }
 }
 
-class TileFrame extends JFrame implements WindowListener,ActionListener{
+class TileFrame extends JFrame implements ActionListener{
 
 
     public TileFrame(){
+        Panel panel1,panel2;
+        JButton buttons[] = new JButton[16],blank;
         JFrame frame = new JFrame ("TileGame");
 
         final int DEFAULT_FRAME_WIDTH = 500;
         final int DEFAULT_FRAME_HEIGHT = 500;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(4,4));
+        setLayout(new GridLayout(4,0));
 
-        setSize(DEFAULT_FRAME_WIDTH,DEFAULT_FRAME_HEIGHT);
+        setSize(DEFAULT_FRAME_WIDTH,DEFAULT_FRAME_HEIGHT); 
         JButton shuffleButton = new JButton("Shuffle");
         panel1 = new Panel(new GridLayout(4,4));
-        panel2 = new Panel(new GridLayout(1,2));
+        panel2 = new Panel(new GridLayout(2,2));
         frame.setTitle("Tile Game");       
         
 
@@ -39,75 +41,30 @@ class TileFrame extends JFrame implements WindowListener,ActionListener{
             panel1.add(buttons[i]);
            
         }
+
         blank = new JButton(" ");
         panel1.add(blank);
         panel2.add(shuffleButton);
         add(panel1);
         add(panel2);
-    }
-
-
-
-    private Panel panel1,panel2;
-    private JButton buttons[] = new JButton[16],blank;
-
-    public void actionPerformed(ActionEvent event)
-    {
-       if (event.getSource() != "blank"){
-        System.out.println("Error: move not valid");
-        System.exit(1);
-       }
-       if (event.getSource() == blank){
-        
-       }      
-    }
-
-    public void MouseClicked (MouseEvent e){
-        final int index = MouseEvent.getPoint();
-    }
-
-    public void mouseExited(MouseEvent e){};
-    public void mouseEntered(MouseEvent e){};
-    public void mousePressed(MouseEvent e){};
-    public void mouseReleased(MouseEvent e){};
-
-
-
-
-    @Override
-    public void windowOpened(WindowEvent e) {
 
     }
 
-    @Override
-    public void windowClosing(WindowEvent e) {
+    public void actionPerformed(ActionEvent e){
+        System.out.println("test");
 
     }
+}
 
-    @Override
-    public void windowClosed(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowIconified(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowDeiconified(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowActivated(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowDeactivated(WindowEvent e) {
-
-    }
-
+/*public void Shuffle(ActionEvent e){
+    // implement fishers shuffle algorithm here
 
 }
+*/
+
+/*public class MouseAdapter implements MouseListener{
+
+}
+*/
+
+
