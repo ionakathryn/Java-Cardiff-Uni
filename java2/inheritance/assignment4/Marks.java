@@ -29,8 +29,8 @@ public class Marks {
         StringTokenizer stk = new StringTokenizer(line);
         line = in.readLine();
         while (stk.hasMoreTokens()){
-            name[count] = stk.nextToken();
-            surName[count] = " " + stk.nextToken();
+            surName[count] = stk.nextToken();
+            name[count] = " " + stk.nextToken();
             marks[count] = stk.nextToken();
             count ++;
           }
@@ -89,6 +89,7 @@ public class Marks {
           }
         }
         
+        
         }
       
     }
@@ -102,10 +103,10 @@ public class Marks {
           }
           for (int a = 0; a < name.length; a++){
             if (name[a]!= null){
-            print = String.format("%-4s%4s     %-7s", name[a], surName[a], marks[a]);
+            print = String.format("%-4s %4s     %-7s", name[a], surName[a], marks[a]);
             System.out.println(print);
           }
         }
         
     }
-  }
+}
