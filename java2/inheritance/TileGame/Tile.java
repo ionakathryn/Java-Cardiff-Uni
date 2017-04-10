@@ -32,8 +32,6 @@ class TileFrame extends JFrame implements ActionListener, MouseListener{
         panel2 = new Panel(new GridLayout(2, 2));
         frame.setTitle("Tile Game");
 
-        int count = 0;
-
         for (int i = 0; i < 16; i++){
                 buttons[i] = new JButton();
                 buttons[i].addActionListener(this);
@@ -283,7 +281,7 @@ class TileFrame extends JFrame implements ActionListener, MouseListener{
     JButton shuffleButton,blank, firstClick;
     JButton[] buttons = new JButton[16];
     Panel panel1,panel2;
-    int count;
+    int count = 0;
 
 
 }
