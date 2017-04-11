@@ -1,287 +1,78 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.Frame;
+import java.awt.GridLayout;
+import java.awt.TextField;
+import java.awt.Button;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-public class Tile {
-    public static void main (String[] args) {
-
-        //creates GUI
-        TileFrame frame = new TileFrame();
-        frame.setTitle("Tile Game");
+import java.awt.event.ActionEvent;
+public class ButtonArray
+        {
+public static void main( String[] args )
+        {
+        ButtonArrayFrame frame = new ButtonArrayFrame();
+        frame.setTitle( "Button Array" );
         frame.setVisible(true);
-    }
-}
-
-class TileFrame extends JFrame implements ActionListener, MouseListener{
-
-
-    public TileFrame() {
-        JFrame frame = new JFrame("TileGame");
-
-        final int DEFAULT_FRAME_WIDTH = 500;
-        final int DEFAULT_FRAME_HEIGHT = 500;
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(4, 4));
-
-        setSize(DEFAULT_FRAME_WIDTH, DEFAULT_FRAME_HEIGHT);
-        shuffleButton = new JButton("Shuffle");
-        panel1 = new Panel(new GridLayout(4, 4));
-        panel2 = new Panel(new GridLayout(2, 2));
-        frame.setTitle("Tile Game");
-
-        for (int i = 0; i < 16; i++){
-                buttons[i] = new JButton();
-                buttons[i].addActionListener(this);
-                buttons[i].setText(Integer.toString(i+1));
-                panel1.add(buttons[i]);
-
         }
-        add(panel1);
-        blank = new JButton(" ");
-        blank.addActionListener(this);
+        }
 
-
-        shuffleButton.addActionListener(this);
-
-        add(panel2);
+class ButtonArrayFrame extends Frame implements ActionListener
+{
+    public ButtonArrayFrame()
+    {
+        final int DEFAULT_FRAME_WIDTH = 150;
+        final int DEFAULT_FRAME_HEIGHT = 150;
+        setSize( DEFAULT_FRAME_WIDTH, DEFAULT_FRAME_HEIGHT );
+        WindowCloser listener = new WindowCloser();
+        addWindowListener(listener);
+        setLayout( new GridLayout( 4, 4 ) );
+        message = new TextField();
+        message.setEditable( false );
+        add( message );
+        button = new Button[16];
+        for ( int i = 0; i < 16; i++ )
+        {
+            button[i] = new Button();
+            button[i].setLabel( Integer.toString( i + 1 ) );
+            button[i].addActionListener( this );
+            add( button[i] );
+        }
+        button[2].setLabel( "" );
+        index = 2;
+        Button shuffle = new Button("shuffle");
+        add(shuffle);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == buttons[1]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[1];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[2]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[2];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[3]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[3];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[4]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[4];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[5]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[5];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[6]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[6];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[7]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[7];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[8]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[8];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[9]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[9];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[10]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[10];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[11]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[11];
-
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[12]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[12];
-
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[13]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[13];
-
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[14]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[14];
-
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-        if (e.getSource() == buttons[15]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[15];
-
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
+    public void actionPerformed( ActionEvent e )
+    {
+        for ( int i = 0; i < 16; i++ )
+        {
+            if ( e.getSource() == button[i] )
+            {
+                if ( i != index )
+                {
+                    int row = index % 4;
+                    if ( ( i % 4 == row - 1 ) || ( i % 4 == row + 1 ) )
+                    {
+                        button[ index ].setLabel( button[ i ].getLabel() );
+                        button[ i ].setLabel( "" );
+                        index = i;
+                        message.setText( "" );
+                    }
+                    else
+                        message.setText( "Bad Move" );
+                }
             }
         }
-
-        if (e.getSource() == buttons[16]){
-            if (count < 1){
-                count = 1;
-                firstClick = buttons[16];
-            }
-
-            else {
-                // check if firstClick and current are adjacent then swap
-            }
-
-        }
-
-
-
     }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
-
+    private class WindowCloser extends WindowAdapter
+    {
+        public void windowClosing( WindowEvent event )
+        {
+            System.exit( 0 );
+        }
     }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
-
-
-
-    JButton shuffleButton,blank, firstClick;
-    JButton[] buttons = new JButton[16];
-    Panel panel1,panel2;
-    int count = 0;
-
-
+    private TextField message;
+    private Button[] button;
+    private int index;
 }
