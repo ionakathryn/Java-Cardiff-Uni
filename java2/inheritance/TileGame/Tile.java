@@ -1,3 +1,4 @@
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.Frame;
@@ -6,6 +7,10 @@ import java.awt.TextField;
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.Collections;
+import java.util.Arrays;
+import javax.swing.JComponent;
+
 public class ButtonArray
         {
 public static void main( String[] args )
@@ -13,6 +18,8 @@ public static void main( String[] args )
         ButtonArrayFrame frame = new ButtonArrayFrame();
         frame.setTitle( "Button Array" );
         frame.setVisible(true);
+      
+
         }
         }
 
@@ -20,6 +27,7 @@ class ButtonArrayFrame extends Frame implements ActionListener
 {
     public ButtonArrayFrame()
     {
+    	
         final int DEFAULT_FRAME_WIDTH = 150;
         final int DEFAULT_FRAME_HEIGHT = 150;
         setSize( DEFAULT_FRAME_WIDTH, DEFAULT_FRAME_HEIGHT );
@@ -39,12 +47,24 @@ class ButtonArrayFrame extends Frame implements ActionListener
         }
         button[2].setLabel( "" );
         index = 2;
-        Button shuffle = new Button("shuffle");
+        shuffle = new Button();
+        shuffle.addActionListener(this);
+        shuffle.setLabel("shuffle");
         add(shuffle);
     }
 
     public void actionPerformed( ActionEvent e )
     {
+    	if (e.getSource() == shuffle){
+        	message.setText("blabla");
+        	for ( int i = 0; i < 16; i++ )
+        {
+            button[i].setLabel( "test");
+        }
+
+        	
+        }
+
         for ( int i = 0; i < 16; i++ )
         {
             if ( e.getSource() == button[i] )
@@ -72,7 +92,9 @@ class ButtonArrayFrame extends Frame implements ActionListener
             System.exit( 0 );
         }
     }
+
     private TextField message;
     private Button[] button;
+    private Button shuffle;
     private int index;
 }
