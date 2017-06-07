@@ -1,84 +1,62 @@
-import javax.swing.JFrame;
-import java.awt.*;
-import javax.swing.JTextField;
 import javax.swing.*;
+	import java.awt.event.ActionListener;
+	import java.awt.event.ActionEvent;
+	import java.awt.GridLayout;
+	public class Assignment1 {
+	public static void main(String[] args){
+	MainFrame frame = new MainFrame();
+	frame.setVisible(true);
+	}
+	}
+	class MainFrame extends JFrame implements ActionListener {
+	public MainFrame() {
+	final int DEFAULT_FRAME_WIDTH = 500;
+	final int DEFAULT_FRAME_HEIGHT = 500;
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setSize(DEFAULT_FRAME_WIDTH, DEFAULT_FRAME_HEIGHT);
+	setTitle("Student Records");
+	setLayout(new GridLayout(3, 2));
+	add = new JButton("Add");
+	add.addActionListener(this);
+	display = new JButton("Display");
+	display.addActionListener(this);
+	update = new JButton("Update");
+	delete = new JButton("Delete");
+	delete.addActionListener(this);
+	list = new JButton("List");
+	done = new JButton("Done");
+	done.addActionListener(this);
+	add(add);
+	add(display);
+	add(update);
+	add(delete);
+	add(list);
+	add(done);
+	}
+	public void actionPerformed(ActionEvent e) {
+	if (e.getSource() == done) {
+	System.exit(0);
+	}
+	if (e.getSource() == add) {
+	addDialog = new AddDialog(this, true);
+	addDialog.setLayout(null);
+	addDialog.setVisible(true);
+	}
 
-class AddDialog extends Dialog {
+	if (e.getSource() == display){
+	displayDialog = new DisplayDialog(this,true);
+	displayDialog.setVisible(true);
 
-    public AddDialog(JFrame f) {
-        super(f, true);
-        final int DEFAULT_DIALOG_WIDTH = 1000;
-        final int DEFAULT_DIALOG_HEIGHT = 700;
-        setSize(DEFAULT_DIALOG_WIDTH, DEFAULT_DIALOG_HEIGHT);
-        setTitle("addRecord");
-        module_code = new JTextField("module_code");
-        module_code.setSize(124, 50);
-        module_code.setLocation(130, 20);
-        add(module_code);
+	}
 
+	if(e.getSource() == delete){
+		deleterec = new DeleteRecord(this,true);
+		deleterec.setVisible(true);
+	}
 
-        surname = new JTextField("Surname");
-        surname.setSize(100, 50);
-        surname.setLocation(20, 80);
-        add(surname);
-
-        initials = new JTextField("initials");
-        initials.setSize(100, 50);
-        initials.setLocation(20, 160);
-        add(initials);
-
-        title = new JTextField("title");
-        title.setSize(100, 50);
-        title.setLocation(20, 240);
-        add(title);
-
-        studentNum = new JTextField("studentNum");
-        studentNum.setSize(100, 50);
-        studentNum.setLocation(20, 320);
-        add(studentNum);
-
-        assesment_mark = new JTextField("assesment_mark");
-        assesment_mark.setSize(100, 50);
-        assesment_mark.setLocation(20, 400);
-        add(assesment_mark);
-
-        exam_mark = new JTextField("exam_mark");
-        exam_mark.setSize(100, 50);
-        exam_mark.setLocation(20, 480);
-        add(exam_mark);
-
-        error = new JTextArea("this is an error textfield");
-        add(error);
-
-        submit = new JButton("submit");
-        submit.setLocation(250,250);
-        submit.setVisible(true);
-        add(submit);
-
-        checkNumeric(assesment_mark.getText());
-        checkNumeric(exam_mark.getText());
-        checkNumeric(studentNum.getText());
-
-
-    }
-    private JTextField module_code, surname, initials, title,studentNum, assesment_mark, exam_mark ;
-    private JTextArea error;
-    private JButton submit;
-
-    public void checkNumeric(String input) {
-        try {
-            Integer.parseInt(input);
-        System.out.println("valid int");
-    }
-
-    catch(NumberFormatException nfe)
-
-        {
-            System.out.println("must input int");
-        }
-    }
-
-
-
-
+	}
+	private JButton add, display, update, delete, list, done, submit,test;
+	private AddDialog addDialog;
+	private DisplayDialog displayDialog;
+	private DeleteRecord deleterec;
 }
