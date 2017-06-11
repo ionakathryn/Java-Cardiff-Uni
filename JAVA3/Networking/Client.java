@@ -1,20 +1,20 @@
 import javax.swing.*;
-    import java.awt.*;
-    import java.awt.event.ActionEvent;
-    import java.awt.event.ActionListener;
-    import java.io.IOException;
-    import java.net.DatagramSocket;
-    import java.net.DatagramPacket;
-    import java.net.InetAddress;
-    import java.net.SocketException;
-    import java.awt.Frame;
-    import java.awt.BorderLayout;
-    import java.awt.TextField;
-    import java.awt.TextArea;
-    import java.awt.event.WindowAdapter;
-    import java.awt.event.WindowEvent;
-    import java.awt.event.ActionListener;
-    import java.awt.event.ActionEvent;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.DatagramSocket;
+import java.net.DatagramPacket;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.awt.Frame;
+import java.awt.BorderLayout;
+import java.awt.TextField;
+import java.awt.TextArea;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
     public class Client {
         public static void main(String[] args) {
