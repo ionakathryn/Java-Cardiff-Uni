@@ -1,21 +1,53 @@
 import java.io.IOException;
-import java.net.ServerSocket;
+import java.net.DatagramSocket;
 import java.net.*;
 
-public class server {
+public class Server {
+
     public static void main(String[] args) {
-        ServerSocket s = null;
-        try {
-            s = new ServerSocket(3000);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Server waiting for connection....");
-        try {
-            Socket c = s.accept();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Connection established");
+        Server1 s = new Server1();
+        s.waitForPackets();
     }
+}
+
+class Server1{
+    public Server1(){
+
+
+        try {
+            socket = new DatagramSocket(5000);
+        } catch (SocketException se) {
+            se.printStackTrace();
+            System.exit(1);
+        }
+    }
+    public void waitForPackets()
+    {
+        while ( true )
+        {
+            try
+            {
+                //
+                // Set up a packet
+                //
+                byte data[] = new byte[1024];
+                recievePacket = new DatagramPacket( data,
+                        data.length );
+                //
+                // Wait for packet
+                //
+                socket.receive( recievePacket );
+                String str = new String(recievePacket.getData());
+                int num = Integer.valueOf(str.trim());
+                System.out.println("Recieved data: " + num);
+            }
+            catch(IOException ioe){
+                ioe.printStackTrace();
+                System.exit(2);
+            }
+        }
+    }
+    private DatagramPacket sendPacket,recievePacket;
+    private DatagramSocket socket;
+
 }
